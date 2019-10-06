@@ -1,0 +1,17 @@
+{
+    "name": "chch/simpleform",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Andrey B",
+            "email": "aatuline@gmail.com"
+        }
+    ],
+    "require": {},
+    "description": "form handle library",
+    "autoload": {
+        "psr-4": {
+            "simpleform\\": "\\"
+        }
+    }
+}
