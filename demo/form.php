@@ -1,3 +1,29 @@
+<?php
+
+    require '../vendor/autoload.php';
+
+    use \simpleform\HTMLForm;
+    use \simpleform\validation\rules\{
+        StringLength,
+        NotEmpty
+    };
+    use \simpleform\validation\DataSourceValidator;
+
+    $formValidator = new DataSourceValidator();
+
+    if ( 'POST' == $_SERVER['REQUEST_METHOD'] ) {
+        $form = new HTMLForm($_POST);
+
+        $formValidator->addRule('name', new StringLength(8, 3));
+        $formValidator->addRule('email', new NotEmpty());
+        $formValidator->validate($form);
+    }
+
+    if (
+        'GET' == $_SERVER['REQUEST_METHOD'] ||
+        ( 'POST' == $_SERVER['REQUEST_METHOD'] && $formValidator->isHasErrors() )
+    ) {
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,19 +38,21 @@
 </head>
 <body>
 <div class="container">
-    <form action="index.php" method="post">
+    <form action="form.php" method="post">
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" class="form-control" name="name" id="name"  placeholder="Enter name">
+            <?= $formValidator->getErrorsByFieldName('name'); ?>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <?= $formValidator->getErrorsByFieldName('email'); ?>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
             <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <?= $formValidator->getErrorsByFieldName('password'); ?>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
@@ -37,3 +65,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
+
+<?php } ?>

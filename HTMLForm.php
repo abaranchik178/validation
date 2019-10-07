@@ -5,10 +5,12 @@ namespace simpleform;
 
 class HTMLForm extends DataSource
 {
-//    private $viewFileName;
-//
-//    public function __construct($viewFileName)
-//    {
-//        $this->viewFileName = $viewFileName;
-//    }
+
+    public function __construct($data)
+    {
+        if ( empty($data) ) {
+            throw new \LogicException("form data is empty");
+        }
+        $this->data = $data;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace simpleform\validators\core;
+namespace simpleform\validation;
 
 
 interface ValidateRule

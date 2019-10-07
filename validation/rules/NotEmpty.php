@@ -1,9 +1,9 @@
 <?php
 
 
-namespace simpleform\validators;
+namespace simpleform\validation\rules;
 
-use simpleform\validators\core\ValidateRule;
+use simpleform\validation\ValidateRule;
 
 class NotEmpty implements ValidateRule
 {
