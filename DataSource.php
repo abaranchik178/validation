@@ -1,6 +1,6 @@
 <?php
 
-namespace simpleform;
+namespace chungachanga\simpleform;
 
 
 abstract class DataSource

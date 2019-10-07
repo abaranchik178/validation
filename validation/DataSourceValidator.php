@@ -1,10 +1,10 @@
 <?php
 
 
-namespace simpleform\validation;
+namespace chungachanga\simpleform\validation;
 
 
-use simpleform\DataSource;
+use chungachanga\simpleform\DataSource;
 
 class DataSourceValidator
 {

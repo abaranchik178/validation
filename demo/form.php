@@ -2,13 +2,13 @@
 
     require '../vendor/autoload.php';
 
-    use \simpleform\HTMLForm;
-    use \simpleform\validation\rules\{
+    use \chungachanga\simpleform\HTMLForm;
+    use \chungachanga\simpleform\validation\rules\{
         StringLength,
         NotEmpty,
         Email
     };
-    use \simpleform\validation\DataSourceValidator;
+    use \chungachanga\simpleform\validation\DataSourceValidator;
 
 //    $i18nConfig = \chungachanga\i18n\Config::getInstance();
 //    $i18nConfig->setLang('ru');

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace simpleform\validation;
+namespace chungachanga\simpleform\validation;
 
 
 class ValidateErrorsCollection

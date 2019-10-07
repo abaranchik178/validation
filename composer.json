@@ -1,5 +1,5 @@
 {
-    "name": "chch/simpleform",
+    "name": "chungachanga/simpleform",
     "type": "library",
     "authors": [
         {
@@ -19,7 +19,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "simpleform\\": "\\"
+            "chungachanga\\simpleform\\": "\\"
         }
     }
 }

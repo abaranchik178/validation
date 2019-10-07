@@ -1,9 +1,9 @@
 <?php
 
 
-namespace simpleform\validation\rules;
+namespace chungachanga\simpleform\validation\rules;
 
-use simpleform\validation\ValidateRule;
+use chungachanga\simpleform\validation\ValidateRule;
 
 class StringLength extends ValidateRule
 {

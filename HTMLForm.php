@@ -1,6 +1,6 @@
 <?php
 
-namespace simpleform;
+namespace chungachanga\simpleform;
 
 
 class HTMLForm extends DataSource
