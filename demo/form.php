@@ -15,6 +15,7 @@
         $form = new HTMLForm($_POST);
 
         $formValidator->addRule('name', new StringLength(8, 3));
+        $formValidator->addRule('name', new NotEmpty());
         $formValidator->addRule('email', new NotEmpty());
         $formValidator->validate($form);
     }

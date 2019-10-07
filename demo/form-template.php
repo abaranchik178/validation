@@ -13,20 +13,28 @@
 <body>
 <div class="container">
     <form action="form.php" method="post">
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" name="name" id="name"  placeholder="Enter name">
-            <?= $formValidator->getErrorsByFieldName('name'); ?>
+        <div class="form-group row">
+            <label for="name" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="name" id="name"  placeholder="Enter name">
+                <div class="invalid-feedback">
+                    <?= $formValidator->getErrorsMessagesAsString('name'); ?>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <?= $formValidator->getErrorsByFieldName('email'); ?>
+        <div class="form-group row">
+            <label for="exampleInputEmail1" class="col-sm-2 col-form-label">Email address</label>
+            <div class="col-sm-10">
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <?= $formValidator->getErrorsMessagesAsString('email'); ?>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            <?= $formValidator->getErrorsByFieldName('password'); ?>
+        <div class="form-group row">
+            <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <?= $formValidator->getErrorsMessagesAsString('password'); ?>
+            </div>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

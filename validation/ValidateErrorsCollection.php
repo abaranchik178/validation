@@ -33,4 +33,17 @@ class ValidateErrorsCollection
         }
         return true;
     }
+
+    public function getMessagesByFieldName(string $fieldName)
+    {
+        $messages = [];
+        $errors = $this->getAllByFieldName($fieldName);
+        if ( empty($errors) ) {
+            return $messages;
+        }
+        $messages = array_map(function($fieldError) {
+            return $fieldError->getMessage();
+        }, $this->validateErrors[$fieldName]);
+        return $messages;
+    }
 }

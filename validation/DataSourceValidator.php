@@ -69,13 +69,25 @@ class DataSourceValidator
         return ! $this->errorsCollection->isEmpty();
     }
 
-    public function getErrorsByFieldName(string $fieldName)
+    public function getErrorsMessages(string $fieldName)
     {
-        $fieldValidateErrors = $this->getErrors($fieldName);
-
-        if ( empty($fieldValidateErrors) ) {
-            return '';
+        $errors = $this->getErrors($fieldName);
+        if ( empty($errors) ) {
+            return [];
         }
-        return $fieldValidateErrors[0]->getDescription()['message'];
+        $errorsMessages = array_map(function($error) {
+            return $error->getMessage();
+        }, $errors);
+        return $errorsMessages;
+    }
+
+    public function getErrorsMessagesAsString(string $fieldName)
+    {
+        $string = '';
+        $errorsMessages = $this->getErrorsMessages($fieldName);
+        if ( empty($errorsMessages) ) {
+            return $string;
+        }
+        return implode(' and ', $errorsMessages);
     }
 }

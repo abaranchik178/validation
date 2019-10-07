@@ -25,4 +25,9 @@ class ValidateError
             'message' => $this->message,
         ];
     }
+
+    public function getMessage(): string
+    {
+        return $this->message;
+    }
 }

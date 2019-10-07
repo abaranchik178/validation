@@ -11,11 +11,11 @@ class NotEmpty implements ValidateRule
 
     public function check($value)
     {
-        if ( ! empty($value) ) {
-            return true;
+        if ( empty($value) ) {
+            $this->errorMessage = "this value cannot be empty";
+            return false;
         }
-        $this->errorMessage = "this value cannot be empty";
-        return false;
+        return true;
     }
 
     public function getErrorMessage(): string
