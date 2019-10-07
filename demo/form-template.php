@@ -17,9 +17,9 @@
             <label for="name" class="col-sm-2 col-form-label">Name</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" name="name" id="name"  placeholder="Enter name">
-                <div class="invalid-feedback">
+<!--                <div class="invalid-feedback">-->
                     <?= $formValidator->getErrorsMessagesAsString('name'); ?>
-                </div>
+<!--                </div>-->
             </div>
         </div>
         <div class="form-group row">

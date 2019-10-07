@@ -3,8 +3,14 @@
 namespace simpleform\validation;
 
 
-interface ValidateRule
+abstract class ValidateRule
 {
-    public function check($value);
-    public function getErrorMessage(): string;
+    protected $errorMessage;
+
+    abstract public function isValid($value);
+
+    public function getErrorMessage(): string
+    {
+        return $this->errorMessage;
+    }
 }

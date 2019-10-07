@@ -7,8 +7,16 @@
             "email": "aatuline@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "chungachanga/i18n": "dev-master"
+    },
     "description": "form handle library",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/chungachanga/i18n"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "simpleform\\": "\\"

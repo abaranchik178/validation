@@ -5,11 +5,10 @@ namespace simpleform\validation\rules;
 
 use simpleform\validation\ValidateRule;
 
-class StringLength implements ValidateRule
+class StringLength extends ValidateRule
 {
     private $minLength;
     private $maxLength;
-    private $errorMessage;
 
     public function __construct(int $maxLength, int $minLength = 0)
     {
@@ -17,7 +16,7 @@ class StringLength implements ValidateRule
         $this->maxLength = $maxLength;
     }
 
-    public function check($value)
+    public function isValid($value)
     {
         if ( !is_string($value) ) {
             throw new \InvalidArgumentException('...must be a string');
@@ -30,10 +29,4 @@ class StringLength implements ValidateRule
         $this->errorMessage = "length must be between {$this->minLength} and {$this->maxLength}";
         return false;
     }
-
-    public function getErrorMessage(): string
-    {
-        return $this->errorMessage;
-    }
-
 }

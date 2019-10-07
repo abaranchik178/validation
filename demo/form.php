@@ -5,9 +5,17 @@
     use \simpleform\HTMLForm;
     use \simpleform\validation\rules\{
         StringLength,
-        NotEmpty
+        NotEmpty,
+        Email
     };
     use \simpleform\validation\DataSourceValidator;
+
+//    $i18nConfig = \chungachanga\i18n\Config::getInstance();
+//    $i18nConfig->setLang('ru');
+//    $i18nConfig->setTranslationSourceDir( dirname(__FILE__, 2) . '/' . 'i18n');
+//
+//    $i18n = \chungachanga\i18n\I18N::getInstance();
+//    $i18n->setConfig($i18nConfig);
 
     $formValidator = new DataSourceValidator();
 
@@ -17,6 +25,7 @@
         $formValidator->addRule('name', new StringLength(8, 3));
         $formValidator->addRule('name', new NotEmpty());
         $formValidator->addRule('email', new NotEmpty());
+        $formValidator->addRule('email', new Email());
         $formValidator->validate($form);
     }
 

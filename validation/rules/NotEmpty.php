@@ -4,12 +4,11 @@
 namespace simpleform\validation\rules;
 
 use simpleform\validation\ValidateRule;
+use chungachanga\i18n\I18N;
 
-class NotEmpty implements ValidateRule
+class NotEmpty extends ValidateRule
 {
-    private $errorMessage;
-
-    public function check($value)
+    public function isValid($value)
     {
         if ( empty($value) ) {
             $this->errorMessage = "this value cannot be empty";
@@ -17,10 +16,4 @@ class NotEmpty implements ValidateRule
         }
         return true;
     }
-
-    public function getErrorMessage(): string
-    {
-        return $this->errorMessage;
-    }
-
 }

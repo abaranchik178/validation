@@ -41,7 +41,7 @@ class DataSourceValidator
                         "Your data don't have field $fieldName, but you try add validation rule for her"
                     );
                 }
-                if ( ! $rule->check($data[$fieldName]) ) {
+                if ( ! $rule->isValid($data[$fieldName]) ) {
                     $this->errorsCollection->add($fieldName, new ValidateError(
                         $fieldName,
                         $data[$fieldName],
