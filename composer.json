@@ -14,7 +14,7 @@
     "repositories": [
         {
             "type": "git",
-            "url": "https://github.com/chungachanga/i18n"
+            "url": "https://github.com/abaranchik178/i18n"
         }
     ],
     "autoload": {
