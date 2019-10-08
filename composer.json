@@ -1,5 +1,5 @@
 {
-    "name": "chungachanga/simpleform",
+    "name": "simpleweb/validation",
     "type": "library",
     "authors": [
         {
@@ -8,9 +8,9 @@
         }
     ],
     "require": {
-        "chungachanga/i18n": "dev-master"
+        "simpleweb/i18n": "dev-master"
     },
-    "description": "form handle library",
+    "description": "library for custom data validation",
     "repositories": [
         {
             "type": "git",
@@ -19,7 +19,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "chungachanga\\simpleform\\": "\\"
+            "simpleweb\\validation\\": "\\"
         }
     }
 }
