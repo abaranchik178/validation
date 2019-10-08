@@ -1,7 +1,7 @@
 <?php
 
 
-namespace simpleweb\validation;
+namespace abaranchik178\validation;
 
 
 class ArrayValidator implements Validator

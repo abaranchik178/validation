@@ -1,5 +1,5 @@
 {
-    "name": "simpleweb/validation",
+    "name": "abaranchik178/validation",
     "type": "library",
     "authors": [
         {
@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-        "simpleweb/i18n": "dev-master"
+        "abaranchik178/i18n": "dev-master"
     },
     "description": "library for custom data validation",
     "repositories": [
@@ -19,7 +19,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "simpleweb\\validation\\": "\\"
+            "abaranchik178\\validation\\": "\\"
         }
     }
 }

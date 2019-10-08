@@ -1,6 +1,6 @@
 <?php
 
-namespace simpleweb\validation;
+namespace abaranchik178\validation;
 
 
 abstract class ValidateRule

@@ -1,9 +1,9 @@
 <?php
 
 
-namespace simpleweb\validation\rules;
+namespace abaranchik178\validation\rules;
 
-use simpleweb\validation\ValidateRule;
+use abaranchik178\validation\ValidateRule;
 
 class NotEmpty extends ValidateRule
 {
