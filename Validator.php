@@ -1,7 +1,7 @@
 <?php
 
 
-namespace chungachanga\simpleform\validation;
+namespace simpleweb\validation;
 
 
 interface Validator

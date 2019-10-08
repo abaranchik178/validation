@@ -1,10 +1,9 @@
 <?php
 
 
-namespace chungachanga\simpleform\validation\rules;
+namespace simpleweb\validation\rules;
 
-use chungachanga\simpleform\validation\ValidateRule;
-use chungachanga\i18n\I18N;
+use simpleweb\validation\ValidateRule;
 
 class Email extends ValidateRule
 {

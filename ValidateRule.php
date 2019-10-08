@@ -1,6 +1,6 @@
 <?php
 
-namespace chungachanga\simpleform\validation;
+namespace simpleweb\validation;
 
 
 abstract class ValidateRule

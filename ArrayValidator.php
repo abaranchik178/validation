@@ -1,10 +1,8 @@
 <?php
 
 
-namespace chungachanga\simpleform\validation;
+namespace simpleweb\validation;
 
-
-use chungachanga\simpleform\DataSource;
 
 class ArrayValidator implements Validator
 {
