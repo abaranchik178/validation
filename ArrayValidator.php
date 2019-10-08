@@ -6,7 +6,7 @@ namespace chungachanga\simpleform\validation;
 
 use chungachanga\simpleform\DataSource;
 
-class DataSourceValidator
+class ArrayValidator implements Validator
 {
     private $rules;
     private $errorsCollection;
@@ -24,12 +24,11 @@ class DataSourceValidator
         $this->rules[$fieldName][] = $validateRule;
     }
 
-    public function validate(DataSource $dataSource)
+    public function validate($data)
     {
         if ( empty($this->rules) ) {
             return true;
         }
-        $data = $dataSource->getData();
         if ( empty($data) ) {
             return true;
         }
