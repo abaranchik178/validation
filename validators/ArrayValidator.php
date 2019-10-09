@@ -33,7 +33,8 @@ class ArrayValidator implements Validator
             return true;
         }
         if ( empty($data) ) {
-            return true;
+            //fixme  should depend on validation rules
+            return false;
         }
         foreach ($this->rules as $fieldName => $validateRules) {
             foreach ($validateRules as $rule) {
