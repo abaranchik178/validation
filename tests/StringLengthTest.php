@@ -3,7 +3,6 @@
 namespace abaranchik178\validation\tests;
 
 use abaranchik178\validation\rules\StringLength;
-use abaranchik178\validation\ArrayValidator;
 use PHPUnit\Framework\TestCase;
 
 class StringLengthTest extends TestCase
@@ -13,13 +12,8 @@ class StringLengthTest extends TestCase
      */
     public function testIsValid_between3and7($string, $isValid)
     {
-        $validator = new ArrayValidator();
-        $validator->addRule('some_string', new StringLength(7, 3));
-        
-        $result = $validator->validate([
-            'some_string' => $string
-        ]);
-        
+        $rule = new StringLength(7, 3);
+        $result = $rule->isValid($string);
         $this->assertSame($result, $isValid);
     }
 
@@ -28,7 +22,7 @@ class StringLengthTest extends TestCase
      */
     public function testIsValid_between0and9($string, $isValid)
     {
-        $rule = new StringLength();
+        $rule = new StringLength(9);
         $result = $rule->isValid($string);
         $this->assertSame($result, $isValid);
     }

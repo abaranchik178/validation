@@ -3,7 +3,6 @@
 namespace abaranchik178\validation\tests;
 
 use abaranchik178\validation\rules\NotEmpty;
-use abaranchik178\validation\ArrayValidator;
 use PHPUnit\Framework\TestCase;
 
 class NotEmptyTest extends TestCase
