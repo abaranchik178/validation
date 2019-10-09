@@ -20,8 +20,8 @@ class ValidateError
     public function getDescription(): array
     {
         return [
-            'field name' => $this->fieldName,
-            'field value' => $this->fieldValue,
+            'name' => $this->fieldName,
+            'value' => $this->fieldValue,
             'message' => $this->message,
         ];
     }

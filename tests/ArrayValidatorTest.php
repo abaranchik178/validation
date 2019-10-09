@@ -21,6 +21,27 @@ class ArrayValidatorTest extends TestCase
         ]);
         $this->assertSame($result, $isValid);
     }
+    /**
+     * @dataProvider validateEmailProvider
+     */
+    public function testGetErrorsEmail($email, $isValid)
+    {
+        $validator = new ArrayValidator();
+        $fieldName = 'some_email';
+        
+        $validator->addRule($fieldName, new Email() );
+        $validator->validate([
+            $fieldName => $email
+        ]);
+        
+        if ($isValid) {
+            $this->assertFalse( $validator->isHasErrors() );
+        } else {
+            foreach ( $validator->getErrors($fieldName) as $error) {
+                $this->assertArrayHasKey('name', $error->getDescription() );
+            }
+        }
+    }
     
     public function validateEmailProvider()
     {
