@@ -3,7 +3,7 @@
 
 namespace abaranchik178\validation\tests;
 
-use abaranchik178\validation\ArrayValidator;
+use abaranchik178\validation\validators\ArrayValidator;
 use abaranchik178\validation\rules\Email;
 use PHPUnit\Framework\TestCase;
 

@@ -1,8 +1,13 @@
 <?php
 
 
-namespace abaranchik178\validation;
-
+namespace abaranchik178\validation\validators;
+use abaranchik178\validation\{
+    Validator,
+    ValidateError,
+    ValidateErrorsCollection,
+    ValidateRule
+};
 
 class ArrayValidator implements Validator
 {
