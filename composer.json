@@ -10,6 +10,9 @@
     "require": {
         "abaranchik178/i18n": "dev-master"
     },
+    "require-dev": {
+        "phpunit/phpunit": "8.*.*"
+    },
     "description": "library for custom data validation",
     "repositories": [
         {
