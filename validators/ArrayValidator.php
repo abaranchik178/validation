@@ -11,8 +11,8 @@ use abaranchik178\validation\{
 
 class ArrayValidator implements Validator
 {
-    private $rules;
-    private $errorsCollection;
+    protected $rules;
+    protected $errorsCollection;
 
     public function __construct()
     {
