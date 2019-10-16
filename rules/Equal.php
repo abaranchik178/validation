@@ -3,8 +3,9 @@
 
 namespace abaranchik178\validation\rules;
 
+use abaranchik178\validation\ValidateRule;
 
-class Equal
+class Equal extends ValidateRule
 {
     private $valueForCompare;
     
