@@ -14,8 +14,8 @@ class Callback extends ValidateRule
         $this->callback = $callback;
     }
 
-    public function isValid($args = []): bool
+    public function isValid($value): bool
     {
-        return call_user_func_array($this->callback, $args);
+        return call_user_func($this->callback, $value);
     }
 }

@@ -10,20 +10,20 @@ class CallbackTest extends TestCase
     /**
      * @dataProvider isValidProvider
      */
-    public function testIsValid($arg1, $arg2, $sum, $isValid)
+    public function testIsValid($arg1, $isValid)
     {
-        $rule = new Callback(function($arg1, $arg2, $sum) {
-             return $arg1 + $arg2 === $sum;
+        $rule = new Callback(function($arg1) {
+             return 2 ===  $arg1;
         });
-        $result = $rule->isValid([$arg1, $arg2, $sum]);
+        $result = $rule->isValid($arg1);
         $this->assertSame($result, $isValid);
     }
     
     public function isValidProvider()
     {
         return [
-            [2, 9, 11, true],
-            [2, 9, 13, false],
+            [2, true],
+            [3, false],
         ];
     }
 }
