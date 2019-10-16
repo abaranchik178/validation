@@ -5,12 +5,18 @@ namespace abaranchik178\validation;
 
 abstract class ValidateRule
 {
-    protected $errorMessage;
+    protected $defaultErrorMessage;
+    protected $customErrorMessage;
+    
+    abstract public function isValid($value): bool;
 
-    abstract public function isValid($value);
-
-    public function getErrorMessage(): string
+    public function getErrorMessage()
     {
-        return $this->errorMessage;
+        return $this->customErrorMessage ?? $this->defaultErrorMessage ?? null;
+    }
+    
+    public function setErrorMessage(string $errorMessage)
+    {
+        $this->customErrorMessage = $errorMessage;
     }
 }

@@ -16,7 +16,7 @@ class StringLength extends ValidateRule
         $this->maxLength = $maxLength;
     }
 
-    public function isValid($value)
+    public function isValid($value): bool
     {
         if ( !is_string($value) ) {
             throw new \InvalidArgumentException('...must be a string');
@@ -26,7 +26,24 @@ class StringLength extends ValidateRule
             return true;
         }
 
-        $this->errorMessage = "length must be between {$this->minLength} and {$this->maxLength}";
+        $this->defaultErrorMessage = "length must be between {$this->minLength} and {$this->maxLength}";
         return false;
     }
+
+    /**
+     * @return int
+     */
+    public function getMinLength(): int
+    {
+        return $this->minLength;
+    }
+
+    /**
+     * @return int
+     */
+    public function getMaxLength(): int
+    {
+        return $this->maxLength;
+    }
+    
 }

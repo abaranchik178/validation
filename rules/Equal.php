@@ -13,12 +13,12 @@ class Equal
         $this->valueForCompare = $valueForCompare;
     }
 
-    public function isValid($value)
+    public function isValid($value): bool
     {
         if ( $value === $this->valueForCompare) {
             return true;
         }
-        $this->errorMessage = "Values is not equal";
+        $this->defaultErrorMessage = "Values is not equal";
         return false;
     }
 }
